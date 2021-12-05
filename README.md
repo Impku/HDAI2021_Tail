@@ -8,8 +8,6 @@ Tailab_Net은 Helmhotz Imaging Platform의 Applied Computer Vision Lab(ACVL) 연
 
 ## Table of Contents
 
----
-
 - [Requirements](#requirements)
 - [Methods](#methods)
   - how to predict / inference method
@@ -19,8 +17,6 @@ Tailab_Net은 Helmhotz Imaging Platform의 Applied Computer Vision Lab(ACVL) 연
 <!-- install 없애도 되고, 다른 이름 method 대제목으로 바꿔서 github 참고시키고 우리가 nnUnet 사용해서 train을 했다. 길어서 풀고 -->
 
 ## Requirements
-
----
 
 This is the **MINIMUM** requirement you have to satisfy before you play with this _model_
 For your convenience, we have uploaded our requirements.txt file in out repository.
@@ -43,8 +39,6 @@ For more information about nnU-Net, the base model of ours, please read the foll
 > Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
 ## Methods
-
----
 
 <!-- 수정 사항입니다.-->
 
@@ -77,15 +71,11 @@ paragraph paragraph
 
 ## References
 
----
-
 <!-- Citation 적을게 뭐가 더 있을지 알려주세요. 수정사항 입니다. format도 제안 주시면 바꿔놓겠습니다.  -->
 
 [nnUNet](https://github.com/MIC-DKFZ/nnUNet)
 
 ## Contacts
-
----
 
 <!-- 메일 주소 넘기기 완료. 근데 공용 이메일 대신 일단 제 이메일 넣어놨어요.
     ㄴ 방금전 태윤이가 준 주소로 다시 수정해놓았습니다.  -->
@@ -94,6 +84,8 @@ paragraph paragraph
 
 <!--- 연대 로고를 넣으려고 했는데,, 뒤에 흰색 배경이 나와서 일단은 넣지 않았습니다. 의견 주세요  --->
 
-![Tailab Logo](https://lh3.googleusercontent.com/S9dRBUgv59W3yGn2zPOvDVmjqFhR3PaYqkKFiYN0CQIMlw5Ewqwg5bvzqM3xME3S1k9Nl-v0yRhYuo4iZggfb4Q=w16383)
+---
+
+![Tailab Logo](https://lh6.googleusercontent.com/P6sVGXI3WH0X1y62qpDJpW88tU5HXn8dAt3_6fFpeHzlRR7W2IHXe1r_T-z-BrHTdq9JcgeDHh2v62R5xzdSr6k=w16383)
 
 TaiLab-Net은 [연세대학교(Yonsei University)](https://www.yonsei.ac.kr/en_sc/index.jsp)의 [의료인공지능연구실 (tAILab)](https://sites.google.com/view/tailab/home?authuser=0) 에 의해 응용, 유지 되고 있습니다.
