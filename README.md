@@ -86,6 +86,6 @@ paragraph paragraph
 
 ---
 
-![Tailab Logo](https://lh6.googleusercontent.com/P6sVGXI3WH0X1y62qpDJpW88tU5HXn8dAt3_6fFpeHzlRR7W2IHXe1r_T-z-BrHTdq9JcgeDHh2v62R5xzdSr6k=w16383)
+![tailab_logo2](https://user-images.githubusercontent.com/39204766/144746204-2d39b036-3ea0-476e-945d-25e4f695ece1.png)
 
 TaiLab-Net은 [연세대학교(Yonsei University)](https://www.yonsei.ac.kr/en_sc/index.jsp)의 [의료인공지능연구실 (tAILab)](https://sites.google.com/view/tailab/home?authuser=0) 에 의해 응용, 유지 되고 있습니다.
