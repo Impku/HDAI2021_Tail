@@ -4,7 +4,7 @@
 
 <!-- 수정 사항입니다.-->
 
-Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데이터셋을 활용한 AI 모델 Datathon인 Heart Disease AI Datathon 2021(H.D.A.I 2021)의 참여를 위해 Helmhotz Imaging Platform의 Applied Computer Vision Lab(ACVL) 연구실에서 만든 nnUNet 기반의 응용 model로써, 대회 주제1인 A2C, A4C View에서의 좌심실 분할 모델 개발을 위해 만들어졌습니다.
+Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데이터셋을 활용한 AI 모델 Datathon인 Heart Disease AI Datathon 2021(H.D.A.I 2021)의 참여를 위해 만들어진 nnUNet 기반의 응용 model로써, 대회 주제1의 A2C, A4C View에서의 좌심실 분할 모델 개발을 위해 만들어졌습니다.
 
 ## Table of Contents
 
@@ -17,9 +17,10 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 <!-- install 없애도 되고, 다른 이름 method 대제목으로 바꿔서 github 참고시키고 우리가 nnUnet 사용해서 train을 했다. 길어서 풀고 -->
 
 ## Requirements
-TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다. 편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다. 
 
-This is the **MINIMUM** requirement you have to satisfy before you play with this _model_. 
+TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다. 편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다.
+
+This is the **MINIMUM** requirement you have to satisfy before you play with this _model_.
 For your convenience, we have uploaded our requirements.txt file in out repository.
 
 <!-- pytorch, 또는 tensorflow 등 제일 필요한 부분만 골라서 쓰면 좋을듯 싶으나, 거르는데 시간이 오래 걸린다면, 그냥
@@ -50,7 +51,7 @@ paragraph paragraph
 paragraph paragraph
 
 1. ~~ 을 설치합니다.
-2. ~~ 터미널을 열어서 다음과 같이 type 합니다. 
+2. ~~ 터미널을 열어서 다음과 같이 type 합니다.
 
    i. asdfasdfjkla;sjdfl;asjdf
 
@@ -66,8 +67,8 @@ paragraph paragraph
    pip install -e
    ```
 
-3. 시연하는 환경마다 차이가 있겠지만, 약 1시간 이후 내외로 모든 inference가 끝나면 터미널이 열린 directory에 폴더가 새로 만들어집니다. 
-4. 비교 연산을 위해 DSC와 JI가 제공되며 이를 활용해 모델의 정확도를 측정할 수 있습니다. 
+3. 시연하는 환경마다 차이가 있겠지만, 약 1시간 이후 내외로 모든 inference가 끝나면 터미널이 열린 directory에 폴더가 새로 만들어집니다.
+4. 비교 연산을 위해 DSC와 JI가 제공되며 이를 활용해 모델의 정확도를 측정할 수 있습니다.
    `pip install --upgrade git+https://github.com/hjung35`
    paragraph paragraph
    paragraph paragraph
