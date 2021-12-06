@@ -36,17 +36,11 @@ For your convenience, we have uploaded our requirements.txt file in out reposito
    pip install -r requirements.txt
 ```
 
-TaiLab_Net은 nnUNet 기반으로 만들어졌으며, nnUNet 관련 정보를 더 알고 싶으시다면, 아래의 논문을 참조해주세요.
-
-For more information about nnU-Net, the base model of ours, please read the following paper:
-
-> Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
-
 ## Methods
 
 <!-- 수정 사항입니다.-->
 
-TaiLab_Net은 pre-trained된 모델로써, inference만 시연 가능하게 만들어졌습니다. Train과 Validation dataset은 대회 참가에 제공되었던 Dataset을 이용했습니다. 다음의 방법은 inference 방법
+TaiLab_Net은 nnUNet 기반으로 pre-trained된 모델입니다. nnUNet 관련 정보를 더 알고 싶으시다면, References 섹션에 기재된 논문을 참조해주세요. TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validation dataset은 대회 참가에 제공되었던 Dataset을 이용했습니다. 다음의 방법은 inference 방법
 paragraph paragraph
 paragraph paragraph
 
@@ -76,6 +70,10 @@ paragraph paragraph
 ## References
 
 <!-- Citation 적을게 뭐가 더 있을지 알려주세요. 수정사항 입니다. format도 제안 주시면 바꿔놓겠습니다.  -->
+
+For more information about nnU-Net, the base model of ours, please read the following paper:
+
+> Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
 [nnUNet](https://github.com/MIC-DKFZ/nnUNet)
 
