@@ -1,0 +1,7 @@
+imgaug==0.4.0
+matplotlib==3.4.2
+numpy==1.21.1
+opencv-python==4.5.3.56
+SimpleITK==2.1.0
+torch==1.11.0a0+git3324bae
+tqdm==4.61.2
