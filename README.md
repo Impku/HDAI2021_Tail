@@ -11,7 +11,7 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 
 ## Featured Results
 |A2C Evaluation|Model 1|Model 2|Model 3|Ensemble|
-|----------|------|------|------|------|
+|:----------:|:------:|:------:|:------:|:------:|
 |Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
 |Jaccard Index|0.917|0.830|0.945|0.0000|
 
