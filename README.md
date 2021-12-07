@@ -51,13 +51,13 @@ paragraph paragraph
    - Create virtual envrionment
    - Install PyTorch
    - Install nnU-Net as below
-
-   ```
-   git clone https://github.com/MIC-DKFZ/nnUNet.git
-   cd nnUNet
-   pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
-   pip install -e .
-   ```
+   
+      ```
+      git clone https://github.com/MIC-DKFZ/nnUNet.git
+      cd nnUNet
+      pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
+      pip install -e .
+      ```
 
 1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
 
