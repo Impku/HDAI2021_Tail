@@ -124,18 +124,20 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
 
 - 동일한 방법으로 A4C
 
-2. 시연하는 환경마다 차이가 있겠지만, 100개 data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 지정된 output directory안에 npy파일들이 생성됩니다. 
+2. 시연하는 환경마다 차이가 있겠지만, 100개의 Validation Data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 사용자가 위에서 지정한 output directory안에 npy파일들이 생성됩니다. 
 
 
 ## References
 
 <!-- Citation 적을게 뭐가 더 있을지 알려주세요. 수정사항 입니다. format도 제안 주시면 바꿔놓겠습니다.  -->
 
-For more information about nnU-Net, the base model of ours, please read the following paper:
+더 많은 nnU-Net 구조와 정보를 원하시면, [여기](https://github.com/MIC-DKFZ/nnUNet)를 참조해주세요.
+
+아래는 nnU-Net 논문 citation을 첨부해두었습니다:
 
 > Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
-더 많은 nnUNet 정보를 원하시면, [여기](https://github.com/MIC-DKFZ/nnUNet)를 참조해주세요.
+
 
 ## Contacts
 
