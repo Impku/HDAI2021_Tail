@@ -59,11 +59,14 @@ paragraph paragraph
    pip install -e .
    ```
 
-1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
+1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다. 
+- `--data_root`: test를 위한 data 디렉토리 경로
+- `--pkl`: 모델 정보가 담긴 pickle 파일의 경로 
+- `--model_weights`: pre-trained 된 모델 weight의 경로 
 
-   A2C 데이터 테스트를 위해서는:
+   A2C 데이터 Inference 를 위해서 터미널에:
    ```
-   python3 unet.py --data_root /path/to/data_directory/ --pkl /path/to/pkl_file/ --model_weights /path/to/model/file/
+   python unet.py --data_root "path_to_data_directory" --pkl "path_to_pkl_file" --model_weights "path_to_model_file"
    ```
 
 2. 시연하는 환경마다 차이가 있겠지만, inference는 10분정도 소요됩니다. 모든 inference가 끝나면 `exp` 폴더 안에 output이 생성됩니다. 
