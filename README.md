@@ -24,34 +24,31 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 - Pytorch 1.7+
 - CuDNN 8.1.0.77 (보류)
 
-TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다. 편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다.
+TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다.
 
-This is the **MINIMUM** requirement you have to satisfy before you play with this _model_.
-For your convenience, we have uploaded our requirements.txt file in out repository.
-
-<!-- pytorch, 또는 tensorflow 등 제일 필요한 부분만 골라서 쓰면 좋을듯 싶으나, 거르는데 시간이 오래 걸린다면, 그냥
- terminal 창에
-
- pip freeze > requirements.txt
-
-치시면 설치된 library들 version들이 적힌 requirements.txt가 나옵니다 그걸 이곳에 복사 / 붙여넣기 하면 될 것 같습니다.
-
--->
 - imgaug==0.4.0
 - matplotlib==3.4.2
 - numpy==1.21.1
 - opencv-python==4.5.3.56
 - SimpleITK==2.1.0
 - tqdm==4.61.2
+
+ 편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다. requirements.txt를 설치하기 앞서 TaiLab_Net을 아래와 같이 설치합니다.
+
 ```
-   git clone https://github.com/Impku/HDAI2021_Tail.git
-   cd HDAI2021_Tail
-   pip install -r requirements.txt
+git clone https://github.com/Impku/HDAI2021_Tail.git
+cd HDAI2021_Tail
+```
+
+터미널에 아래와 같이 입력하여 requirements.txt를 설치합니다.
+
+```
+pip install -r requirements.txt
 ```
 
 ## Methods
 
-<!-- 수정 사항입니다.-->
+<!-- 수정 사항입니다. 모델 2개를 사용했기 때문에 각각의 방법을 모두 설명해야함-->
 
 TaiLab_Net은 nnUNet 기반으로 pre-trained된 모델입니다. nnUNet 관련 정보를 더 알고 싶으시다면, References 섹션에 기재된 논문을 참조해주세요. TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validation dataset은 대회 참가에 제공되었던 Dataset을 이용했습니다. 다음의 방법은 inference 방법
 paragraph paragraph
@@ -61,7 +58,8 @@ paragraph paragraph
 
    - Create virtual envrionment
    - Install PyTorch
-   - Install nnUN-Net as below
+   - Install nnU-Net as below
+
    ```
    git clone https://github.com/MIC-DKFZ/nnUNet.git
    cd nnUNet
@@ -69,19 +67,16 @@ paragraph paragraph
    pip install -e .
    ```
 
-1. Inference를 위해 TaiLab_Net을 설치한다.
+1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
 
+   A2C 데이터 테스트를 위해서는:
    ```
-   git clone https://github.com/Impku/HDAI2021_Tail.git
-   cd TaiLabNet
-   pip install -e
+   python3 unet.py --data_root /path/to/data_directory/ --pkl /path/to/pkl_file/ --model_weights /path/to/model/file/
    ```
 
-3. 시연하는 환경마다 차이가 있겠지만, 약 1시간 이후 내외로 모든 inference가 끝나면 터미널이 열린 directory에 폴더가 새로 만들어집니다.
-4. 비교 연산을 위해 DSC와 JI가 제공되며 이를 활용해 모델의 정확도를 측정할 수 있습니다.
-   `pip install --upgrade git+https://github.com/hjung35`
-   paragraph paragraph
-   paragraph paragraph
+2. 시연하는 환경마다 차이가 있겠지만, inference는 10분정도 소요됩니다. 모든 inference가 끝나면 `exp` 폴더 안에 output이 생성됩니다. 
+
+
 
 ## References
 
