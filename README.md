@@ -114,11 +114,11 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
 
    - ```--json```: 결과 document의 저장 여부 (boolean)
       - default value: ``` false ```
-      - default directory: ```./exp/result_A2C.json ``` **OR** ```./exp/result_A4C.json```
+      - default directory: ```./exp/result_A2C.json```  **OR**  ```./exp/result_A4C.json```
 
    - ```--plot_png```: 생성된 mask의 저장 여부 (boolean)
       - default value: ``` false ```
-      - default directory: **```위에 --exp에서 설정한 경로와 같은 directory에 저장  ```**
+      - default directory: <span style="color:orange">**```위에 --exp에서 설정한 경로와 같은 directory에 저장  ```**</span>
 
 2. A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
