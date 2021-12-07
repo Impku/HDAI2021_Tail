@@ -57,17 +57,20 @@ paragraph paragraph
    cd nnUNet
    pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
    pip install -e .
+   cd ..
    ```
 
 1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
+   - `--data_root`: inference test를 위한 data 디렉토리 경로
+   - `--pkl`: 모델 정보가 담긴 pickle 파일의 경로
+   - `--model_weights`: pre-trained 된 모델 weight의 경로
 
-   A2C 데이터 테스트를 위해서는:
+   A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
-   python3 unet.py --data_root /path/to/data_directory/ --pkl /path/to/pkl_file/ --model_weights /path/to/model/file/
+   python3 unet.py --data_root "path_to_data_directory" --pkl "path_to_pkl_file" --model_weights "path_to_model_file"
    ```
 
 2. 시연하는 환경마다 차이가 있겠지만, inference는 10분정도 소요됩니다. 모든 inference가 끝나면 `exp` 폴더 안에 output이 생성됩니다. 
-
 
 
 ## References
@@ -78,7 +81,7 @@ For more information about nnU-Net, the base model of ours, please read the foll
 
 > Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
-[nnUNet](https://github.com/MIC-DKFZ/nnUNet)
+더 많은 nnUNet 정보를 원하시면, [여기](https://github.com/MIC-DKFZ/nnUNet)를 참조해주세요.
 
 ## Contacts
 
