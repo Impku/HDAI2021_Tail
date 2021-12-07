@@ -118,14 +118,15 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
 
    - ```--plot_png```: 생성된 mask의 저장 여부 (boolean)
       - default value: ``` false ```
-      - default directory: <span style="color:orange">**```위에 --exp에서 설정한 경로와 같은 directory에 저장  ```**</span>
+      - default directory: **```위에 --exp에서 설정한 경로와 같은 directory에 저장  ```**
+
 
 2. A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
    python3 inference_A2C.py --data_root "path_to_data_directory" --exp "path_to_output_data_directory"
    ```
-
    - A4C 데이터 Inference 역시 동일한 방법으로 입력/실행해주세요. 
+
 
 3. 시연하는 환경마다 차이가 있겠지만, 100개의 Validation Data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 사용자가 위에서 지정한 output directory안에 npy파일들이 생성됩니다. 
 
