@@ -6,14 +6,6 @@
 
 Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데이터셋을 활용한 AI 모델 Datathon인 Heart Disease AI Datathon 2021(H.D.A.I 2021)의 참여를 위해 만들어진 nnUNet 기반의 응용 model로써, 대회 주제1의 A2C, A4C View에서의 좌심실 분할 모델 개발을 위해 만들어졌습니다.
 
-## Table of Contents
-
-- [Requirements](#requirements)
-- [Methods](#methods)
-  - how to predict / inference method
-- [References](#references)
-- [Contacts](#contacts)
-
 <!-- install 없애도 되고, 다른 이름 method 대제목으로 바꿔서 github 참고시키고 우리가 nnUnet 사용해서 train을 했다. 길어서 풀고 -->
 
 ## Requirements
