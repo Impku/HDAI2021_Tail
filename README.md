@@ -90,41 +90,44 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
 
 1. Inference를 위해서는 몇가지 argument들을 설정 및 지정해주셔야 합니다. 
 총 4개의 ```--data_root```, ```--exp```, ```--json```, ```--plot_png``` argument들을 지정해줄 수 있습니다.
-   - ```--data_root```: inference를 위한 data 디렉토리 경로 (default: **./data**)
+   - ```--data_root```: inference를 위한 data 디렉토리 경로    
+      - default directory: ```./data ```
 
       폴더 구조 예시)
       ```
       data
-      └─── A2C
-      │    │   0801.png
-      │    │   0801.npy
-      │    │   ...    
-      │    │     
-      └─── A4C
-           │   0801.png (번호 확인)
-           │   0801.npy
-           │   ...
+      ├───── A2C
+      │      ├──  0801.png
+      │      ├──  0801.npy
+      │      │      ...    
+      │      └──    
+      │
+      └───── A4C
+              ├──  0801.png (번호 확인)
+              ├──  0801.npy
+              │      ...
+              └── 
       ```
    
    - ```--exp```: .npy파일이 저장되는 output 디렉토리 경로 
-   (default: **./exp**)
+      - default directory: ```./exp ```
 
-   - ```--json```: 결과 document 저장 여부 (boolean)
-   (default: false)
-   (default directory: ./exp/result_A2C.json **OR** ./exp/result_A4C.json)
+   - ```--json```: 결과 document의 저장 여부 (boolean)
+      - default value: ``` false ```
+      - default directory: ```./exp/result_A2C.json ``` **OR** ```./exp/result_A4C.json```
 
-   - ```--plot_png```: 생성된 mask를 저장 여부 (boolean)
-   deafult: false 
-   default: ./exp 랑 같은 directory에 저장
+   - ```--plot_png```: 생성된 mask의 저장 여부 (boolean)
+      - default value: ``` false ```
+      - default directory: **```위에 --exp에서 설정한 경로와 같은 directory에 저장  ```**
 
-   A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
+2. A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
    python3 inference_A2C.py --data_root "path_to_data_directory" --exp "path_to_output_data_directory"
    ```
 
-- 동일한 방법으로 A4C
+   - A4C 데이터 Inference 역시 동일한 방법으로 입력/실행해주세요. 
 
-2. 시연하는 환경마다 차이가 있겠지만, 100개의 Validation Data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 사용자가 위에서 지정한 output directory안에 npy파일들이 생성됩니다. 
+3. 시연하는 환경마다 차이가 있겠지만, 100개의 Validation Data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 사용자가 위에서 지정한 output directory안에 npy파일들이 생성됩니다. 
 
 
 ## References
