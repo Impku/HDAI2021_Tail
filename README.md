@@ -31,14 +31,14 @@ Note: Ensemble 모델의 경우, minimum, median, maximum, mean의 DSC와 JI 값
 - CUDA 11.3
 
 TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다.
-
-- imgaug==0.4.0
-- matplotlib==3.4.2
-- numpy==1.21.1
-- opencv-python==4.5.3.56
-- SimpleITK==2.1.0
-- tqdm==4.61.2
-
+```
+imgaug==0.4.0
+matplotlib==3.4.2
+numpy==1.21.1
+opencv-python==4.5.3.56
+SimpleITK==2.1.0
+tqdm==4.61.2
+```
  편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다. requirements.txt를 설치하기 앞서 TaiLab_Net을 아래와 같이 설치합니다.
 
 ```
