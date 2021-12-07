@@ -10,8 +10,17 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 
 
 ## Featured Results
-CHART
+|A2C Evaluation|Model 1|Model 2|Model 3|Ensemble|
+|----------|------|------|------|------|
+|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
+|Jaccard Index|0.917|0.830|0.945|0.0000|
 
+|A4C Evaluation|Model 1|Model 2|Model 3|Ensemble|
+|----------|------|------|------|------|
+|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
+|Jaccard Index|0.917|0.830|0.945|0.0000|
+
+Note: adspfjapsdjf apsdjfaps djfapsjdfapksdjfpasdjfapksd fjapsdjfaposjfaops jfaspojfadjfoajfoapjsdfpasjdfaop j
 
 ## Requirements
 테스트는 아래와 같은 환경에서 이루어졌습니다.
@@ -44,45 +53,33 @@ pip install -r requirements.txt
 ```
 
 ## Structure:
-- ```data/```: 지정된 기본 테스트 dataset 경로
-- ```dataset/```: dataloader 경로
-- ```exp/```: 지정된 기본 출력 결과 경로
-- ```net/```: UNet 모델과 trainer 저장 경로
-- ```utils/```: 이미지 처리, arg parser 등 필요 라이브러리 및 함수 경로 
-- ```weights/```: pre-trained 모델
+- ```data/```: 지정된 기본 Test Dataset 폴더
+- ```dataset/```: 지정된 기본 dataloader 폴더
+- ```exp/```: 지정된 기본 결과 출력 폴더
+- ```net/```: UNet 모델과 관련 trainer 저장 폴더
+- ```utils/```: 이미지 처리 및 arg parser 등 필요 라이브러리 및 함수 경로 
+- ```weights/```: pre-trained 모델 저장 폴더
 - ```inference_A2C.py``` : A2C를 위한 inference 실행 코드
 - ```inference_A4C.py``` : A4C를 위한 inference 실행 코드
 
-
-## Test Structure
-```
-data
-└─── A2C
-│    │   0801.png
-│    │   0801.npy
-│    │   ...    
-│    │     
-└─── A4C
-     │   0801.png (번호 확인)
-     │   0801.npy
-     │   ...
-```
-
 ## Train
+TaiLab_Net은 ~~~~~~~ train되었다. 
+
 
 ## Methods
 
 <!-- 수정 사항입니다. 모델 2개를 사용했기 때문에 각각의 방법을 모두 설명해야함-->
 
-TaiLab_Net은 nnUNet 기반으로 pre-trained된 모델입니다. nnUNet 관련 정보를 더 알고 싶으시다면, References 섹션에 기재된 논문을 참조해주세요. TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validation dataset은 대회 참가에 제공되었던 Dataset을 이용했습니다. 다음의 방법은 inference 방법
-paragraph paragraph
-paragraph paragraph
+TaiLab_Net은 nnU-Net 기반으로 pre-trained된 모델입니다. nnU-Net 관련 정보를 더 알고 싶으시다면, References 섹션에 기재된 논문을 참조해주세요. 
+TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validation dataset은 대회 참가에 제공된 Dataset을 이용했습니다. 
+
+자세한 Inference 방법은 다음과 같이 실행해주세요.
 
 0. Inference 전에 nnU-Net을 설치한다.
 
-   - Create virtual envrionment
-   - Install PyTorch
-   - Install nnU-Net as below
+   - 새로운 가상 환경을 만들어주세요.
+   - PyTorch를 설치해주세요.
+   - 아래와 같이 nnU-Net을 설치해주세요. 
    
    ```
    git clone https://github.com/MIC-DKFZ/nnUNet.git
@@ -91,9 +88,24 @@ paragraph paragraph
    pip install -e .
    ```
 
-1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--exp`, --json`, `--plot_png` argument로 지정해줄 수 있습니다.
-   - ```--data_root```: inference test를 위한 data 디렉토리 경로
-   default: ./data
+1. Inference를 위해서는 몇가지 argument들을 설정 및 지정해주셔야 합니다. 
+총 4개의 `--data_root`, `--exp`, --json`, `--plot_png` argument들을 지정해줄 수 있습니다.
+   - ```--data_root```: inference를 위한 data 디렉토리 경로 argument
+   \[default: ./data\]
+
+      폴더 구조 예시)
+      ```
+      data
+      └─── A2C
+      │    │   0801.png
+      │    │   0801.npy
+      │    │   ...    
+      │    │     
+      └─── A4C
+         │   0801.png (번호 확인)
+         │   0801.npy
+         │   ...
+      ```
    
    - ```--exp```: .npy파일 저장되는 output directory 
    default: ./exp
@@ -105,7 +117,6 @@ paragraph paragraph
    -plot_png: 생성된 mask를 저장 여부 (boolean)
    deafult: false 
    default: ./exp 랑 같은 directory에 저장
-
 
    A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
