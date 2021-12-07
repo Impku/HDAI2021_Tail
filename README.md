@@ -12,15 +12,15 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 ## Featured Results
 |A2C Evaluation|Model 1|Model 2|Model 3|Ensemble|
 |:----------:|:------:|:------:|:------:|:------:|
-|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
-|Jaccard Index|0.917|0.830|0.945|0.0000|
+|Dice Similiarity Coefficient|0.9189|0.9241|0.9262|0.0000|
+|Jaccard Index|0.0000|0.0000|0.0000|0.0000|
 
 |A4C Evaluation|Model 1|Model 2|Model 3|Ensemble|
 |:----------:|:------:|:------:|:------:|:------:|
-|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
-|Jaccard Index|0.917|0.830|0.945|0.0000|
+|Dice Similiarity Coefficient|0.9489|0.9517|0.9491|0.0000|
+|Jaccard Index|0.0000|0.0000|0.0000|0.0000|
 
-Note: adspfjapsdjf apsdjfaps djfapsjdfapksdjfpasdjfapksd fjapsdjfaposjfaops jfaspojfadjfoajfoapjsdfpasjdfaop j
+Note: Ensemble 모델의 경우, minimum, median, maximum, mean의 DSC와 JI 값을 기준으로 제일 높았던 것으로 결정했으며, A2C의 경우 Minimum, A4C의 경우 OOOO으로 설정하였습니다. 
 
 ## Requirements
 테스트는 아래와 같은 환경에서 이루어졌습니다.
@@ -137,7 +137,7 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
 
 더 많은 nnU-Net 구조와 정보를 원하시면, [여기](https://github.com/MIC-DKFZ/nnUNet)를 참조해주세요.
 
-아래는 nnU-Net 논문 citation을 첨부해두었습니다:
+아래는 nnU-Net의 논문 citation 정보입니다:
 
 > Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
