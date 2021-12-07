@@ -26,10 +26,9 @@ def get_confusion_matrix(gt, pred):
 
     return tp, tn, fp, fn
 
-def compute_mean(file: dict):
+def compute_mean(file: dict, option):
 
-    # result = load_json(file)
-    mean_A2C = sum([v['dice_np'] for k,v in file.items() if 'A2C' in k])/100
-    # mean_A4C = sum([v['dice'] for k,v in file.items() if 'A4C' in k])/100
+    mean_dice_A2C = sum([v['dice_sig'] for k,v in file.items()])/100
+    mean_jaccard_A4C = sum([v['jaccard_sig'] for k,v in file.items()])/100
 
-    return mean_A2C#, mean_A4C
+    return mean_dice_A2C, mean_jaccard_A4C

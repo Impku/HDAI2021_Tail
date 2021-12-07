@@ -12,7 +12,7 @@ def load_dataset(datapath,trainer,args):
     origlist = []
     positionlist = []
 
-    for n,img_path in enumerate(sorted(glob(os.path.join(datapath,args.ptype,"*.png")))[:20]):
+    for n,img_path in enumerate(sorted(glob(os.path.join(datapath,args.ptype,"*.png")))):
         imgname = os.path.basename(img_path).split(".")[0]
         labellist.append(imgname)
 

@@ -51,11 +51,11 @@ def main():
         # aggregation
         mask_prob = torch.stack([mask_prob1,mask_prob2,mask_prob3],dim=-1)
         # mean
-        mask_prob = torch.mean(mask_prob,dim=-1)
+        # mask_prob = torch.mean(mask_prob,dim=-1)
         # max
         # mask_prob = torch.max(mask_prob,dim=-1).values
         # min
-        # mask_prob = torch.min(mask_prob,dim=-1).values
+        mask_prob = torch.min(mask_prob,dim=-1).values
         # median
         # mask_prob = torch.median(mask_prob,dim=-1).values
 
@@ -75,7 +75,7 @@ def main():
 
         print(name,dc_sig,jc_sig)
         mask_orig = recovery_mask(mask_prob_sig,orig,position)
-        mask_orig = np.where(mask_orig < 125, 0, 1)
+        mask_orig = np.where(mask_orig < 1, 0, 1)
 
         if args.plot_png == True:
             # export
@@ -87,8 +87,9 @@ def main():
         np.save(os.path.join(args.exp,f"{name}.npy"),mask_orig.astype(np.uint8))
 
 
-    mean= compute_mean(json_dict)
-    json_dict[f'mean_{args.ptype}'] = mean
+    mean_dice, mean_jaccard = compute_mean(json_dict, option='A4C')
+    json_dict[f'mean_dice_{args.ptype}'] = mean_dice
+    json_dict[f'mean_jaccard_{args.ptype}'] = mean_jaccard
 
     if args.json == True:
         write_json(json_dict, f'./exp/result_{args.ptype}.json')
