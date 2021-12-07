@@ -17,6 +17,12 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 <!-- install 없애도 되고, 다른 이름 method 대제목으로 바꿔서 github 참고시키고 우리가 nnUnet 사용해서 train을 했다. 길어서 풀고 -->
 
 ## Requirements
+테스트는 아래와 같은 환경에서 이루어졌습니다.
+
+- Linux(Ubuntu 18.04)
+- Python 3.7
+- Pytorch 1.7+
+- CuDNN 8.1.0.77 (보류)
 
 TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다. 편의를 위해 저희가 마련한 requirements.txt 파일을 설치/참고해서 모델을 run 할 수 있게 준비해 두었습니다.
 
@@ -31,8 +37,15 @@ For your convenience, we have uploaded our requirements.txt file in out reposito
 치시면 설치된 library들 version들이 적힌 requirements.txt가 나옵니다 그걸 이곳에 복사 / 붙여넣기 하면 될 것 같습니다.
 
 -->
-
+- imgaug==0.4.0
+- matplotlib==3.4.2
+- numpy==1.21.1
+- opencv-python==4.5.3.56
+- SimpleITK==2.1.0
+- tqdm==4.61.2
 ```
+   git clone https://github.com/Impku/HDAI2021_Tail.git
+   cd HDAI2021_Tail
    pip install -r requirements.txt
 ```
 
@@ -44,19 +57,22 @@ TaiLab_Net은 nnUNet 기반으로 pre-trained된 모델입니다. nnUNet 관련 
 paragraph paragraph
 paragraph paragraph
 
-1. ~~ 을 설치합니다.
-2. ~~ 터미널을 열어서 다음과 같이 type 합니다.
+0. Inference 전에 nnU-Net을 설치한다.
 
-   i. asdfasdfjkla;sjdfl;asjdf
+   - Create virtual envrionment
+   - Install PyTorch
+   - Install nnUN-Net as below
+   ```
+   git clone https://github.com/MIC-DKFZ/nnUNet.git
+   cd nnUNet
+   pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
+   pip install -e .
+   ```
+
+1. Inference를 위해 TaiLab_Net을 설치한다.
 
    ```
-   pip install TaiLab-Net
-   ```
-
-   ii. asdfaksdpfajsdpfj
-
-   ```
-   git clone https://github.com/hjung35
+   git clone https://github.com/Impku/HDAI2021_Tail.git
    cd TaiLabNet
    pip install -e
    ```
