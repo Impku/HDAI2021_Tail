@@ -8,6 +8,11 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 
 <!-- install 없애도 되고, 다른 이름 method 대제목으로 바꿔서 github 참고시키고 우리가 nnUnet 사용해서 train을 했다. 길어서 풀고 -->
 
+
+## Featured Results
+CHART
+
+
 ## Requirements
 테스트는 아래와 같은 환경에서 이루어졌습니다.
 
@@ -61,9 +66,9 @@ paragraph paragraph
    ```
 
 1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
-   - `--data_root`: inference test를 위한 data 디렉토리 경로
-   - `--pkl`: 모델 정보가 담긴 pickle 파일의 경로
-   - `--model_weights`: pre-trained 된 모델 weight의 경로
+   - ```--data_root```: inference test를 위한 data 디렉토리 경로
+   - ```--pkl```: 모델 정보가 담긴 pickle 파일의 경로
+   - ```--model_weights```: pre-trained 된 모델 weight의 경로
 
    A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
