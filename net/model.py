@@ -1,6 +1,12 @@
 from net.generic_UNet import *
 import torch
 import pickle
+import gzip
+
+def load_states(file):
+    with gzip.open(file,"rb") as f:
+        data = torch.load(f)
+    return data
 
 class nnUNetTrainer():
 
@@ -18,8 +24,8 @@ class nnUNetTrainer():
     	self.load_weights(model_pth)
 
     def load_weights(self,pth):
-    	pth_torch = torch.load(pth)
-    	self.network.load_state_dict(pth_torch["state_dict"])
+    	state_torch = load_states(pth)
+    	self.network.load_state_dict(state_torch)
 
     def initialize_network(self):
         """

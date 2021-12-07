@@ -11,21 +11,48 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
-def ParserArguments():
+def ParserArguments(ptype):
     args = argparse.ArgumentParser()
 
     # Directory Setting 
     args.add_argument('--data_root', type=str, default='./data/', help='dataset directory')
-    args.add_argument('--pkl', type=str, default="exp/model_final_checkpoint.model.pkl", help='model pkl file')
-    args.add_argument('--model_weights', type=str, default="exp/model_final_checkpoint.model", help='model weight file')
+    args.add_argument('--exp', type=str, default="exp/", help='Folder path to save npy')
+    args.add_argument('--plot_png', type=str2bool,default="false", help='Save to png?')
+    args.add_argument('--json', type=str2bool,default="false", help='Save to png?')
 
     args = args.parse_args()
 
+    args.ptype = ptype
+
+    if args.ptype == "A2C":
+        args.pkl1 = "weights/model1_A2C.pkl"
+        args.pkl2 = "weights/model2_A2C.pkl"
+        args.pkl3 = "weights/model3_A2C.pkl"
+
+        args.model_weights1 = "weights/model1_A2C.model"
+        args.model_weights2 = "weights/model2_A2C.model"
+        args.model_weights3 = "weights/model3_A2C.model"
+
+        args.exp = os.path.join(args.exp,"A2C")
+
+    if args.ptype == "A4C":
+        args.pkl1 = "weights/model1_A4C.pkl"
+        args.pkl2 = "weights/model2_A4C.pkl"
+        args.pkl3 = "weights/model3_A4C.pkl"
+
+        args.model_weights1 = "weights/model1_A4C.model"
+        args.model_weights2 = "weights/model2_A4C.model"
+        args.model_weights3 = "weights/model3_A4C.model"
+
+        args.exp = os.path.join(args.exp,"A4C")
+
     print("\n")
     print("------------Parameters--------------")
+    print(f"- Image type: {args.ptype}")
     print(f"- Data root: {args.data_root}")
-    print(f"- Model pkl file: {args.pkl}")
-    print(f"- Model weights file: {args.model_weights}")
+    print(f"- Export folder: {args.exp}")
+    print(f"- Export PNG files?: {args.plot_png}")
+    print(f"- Export Json file?: {args.json}")
     print("------------Parameters--------------")
     print("\n")
 

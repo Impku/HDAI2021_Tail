@@ -25,7 +25,7 @@ def center_crop(img, width,height):
 
     img_cropped = img[y_min:y_max, x_min: x_max]
         
-    return img_cropped
+    return img_cropped,(y_min,y_max,x_min,x_max)
 
 def image_minmax(img):
     img_minmax = ((img - np.min(img)) / (np.max(img) - np.min(img))).copy()
