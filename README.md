@@ -19,7 +19,7 @@ CHART
 - Linux(Ubuntu 18.04)
 - Python 3.7
 - Pytorch 1.7+
-- CuDNN 8.1.0.77 (보류)
+- CUDA 11.3
 
 TaiLab_Net 모델 시연에 앞서, 최소한의 요구사항은 다음과 같습니다.
 
@@ -43,6 +43,33 @@ cd HDAI2021_Tail
 pip install -r requirements.txt
 ```
 
+## Structure:
+- ```data/```: 지정된 기본 테스트 dataset 경로
+- ```dataset/```: dataloader 경로
+- ```exp/```: 지정된 기본 출력 결과 경로
+- ```net/```: UNet 모델과 trainer 저장 경로
+- ```utils/```: 이미지 처리, arg parser 등 필요 라이브러리 및 함수 경로 
+- ```weights/```: pre-trained 모델
+- ```inference_A2C.py``` : A2C를 위한 inference 실행 코드
+- ```inference_A4C.py``` : A4C를 위한 inference 실행 코드
+
+
+## Test Structure
+```
+data
+└─── A2C
+│    │   0801.png
+│    │   0801.npy
+│    │   ...    
+│    │     
+└─── A4C
+     │   0801.png (번호 확인)
+     │   0801.npy
+     │   ...
+```
+
+## Train
+
 ## Methods
 
 <!-- 수정 사항입니다. 모델 2개를 사용했기 때문에 각각의 방법을 모두 설명해야함-->
@@ -62,20 +89,32 @@ paragraph paragraph
    cd nnUNet
    pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
    pip install -e .
-   cd ..
    ```
 
-1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--pkl`, `--model_weights` argument로 지정해줄 수 있습니다.
+1. Inference를 위해서는 input/output data 디렉토리를 설정해야합니다. 또한 pre-trained model 파일과 model 정보가 담긴 pickle 파일을 지정해주어야 합니다. 각각은 `--data_root`, `--exp`, --json`, `--plot_png` argument로 지정해줄 수 있습니다.
    - ```--data_root```: inference test를 위한 data 디렉토리 경로
-   - ```--pkl```: 모델 정보가 담긴 pickle 파일의 경로
-   - ```--model_weights```: pre-trained 된 모델 weight의 경로
+   default: ./data
+   
+   - ```--exp```: .npy파일 저장되는 output directory 
+   default: ./exp
+
+   - json: 결과 document 저장 (boolean)
+   default: false
+   default directory: ./exp/result_A2C.json / A4C도 동일
+
+   -plot_png: 생성된 mask를 저장 여부 (boolean)
+   deafult: false 
+   default: ./exp 랑 같은 directory에 저장
+
 
    A2C 데이터 Inference를 위해서 터미널에 다음과 같이 입력하세요:
    ```
-   python3 unet.py --data_root "path_to_data_directory" --pkl "path_to_pkl_file" --model_weights "path_to_model_file"
+   python3 inference_A2C.py --data_root "path_to_data_directory" --exp "path_to_output_data_directory"
    ```
 
-2. 시연하는 환경마다 차이가 있겠지만, inference는 10분정도 소요됩니다. 모든 inference가 끝나면 `exp` 폴더 안에 output이 생성됩니다. 
+- 동일한 방법으로 A4C
+
+2. 시연하는 환경마다 차이가 있겠지만, 100개 data 기준, inference는 약 5분정도 소요됩니다. 모든 inference가 끝나면 지정된 output directory안에 npy파일들이 생성됩니다. 
 
 
 ## References
