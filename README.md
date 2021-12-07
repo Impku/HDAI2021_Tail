@@ -12,8 +12,8 @@ Tailab_Net은 인공지능 학습용 심장질환 심초음파 및 심전도 데
 ## Featured Results
 |A2C Evaluation|Model 1|Model 2|Model 3|Ensemble|
 |:----------:|:------:|:------:|:------:|:------:|
-|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|'fixed'
-|Jaccard Index|0.917|0.830|0.945|0.0000|'fixed' 
+|Dice Similiarity Coefficient|0.917|0.830|0.945|0.0000|
+|Jaccard Index|0.917|0.830|0.945|0.0000|
 
 |A4C Evaluation|Model 1|Model 2|Model 3|Ensemble|
 |:----------:|:------:|:------:|:------:|:------:|
@@ -57,20 +57,20 @@ pip install -r requirements.txt
 - ```dataset/```: 지정된 기본 dataloader 폴더
 - ```exp/```: 지정된 기본 결과 출력 폴더
 - ```net/```: UNet 모델과 관련 trainer 저장 폴더
-- ```utils/```: 이미지 처리 및 arg parser 등 필요 라이브러리 및 함수 경로 
+- ```utils/```: 이미지 처리 및 arg parser 등 필요 라이브러리 및 함수 저장 폴더
 - ```weights/```: pre-trained 모델 저장 폴더
 - ```inference_A2C.py``` : A2C를 위한 inference 실행 코드
 - ```inference_A4C.py``` : A4C를 위한 inference 실행 코드
 
 ## Train
-TaiLab_Net은 ~~~~~~~ train되었다. 
+TaiLab_Net은 ~~~~~~~ train 되었습니다. 
 
 
 ## Methods
 
 <!-- 수정 사항입니다. 모델 2개를 사용했기 때문에 각각의 방법을 모두 설명해야함-->
 
-TaiLab_Net은 nnU-Net 기반으로 pre-trained된 모델입니다. nnU-Net 관련 정보를 더 알고 싶으시다면, References 섹션에 기재된 논문을 참조해주세요. 
+TaiLab_Net은 nnU-Net 기반으로 pre-trained된 모델입니다. nnU-Net 관련 정보를 더 알고 싶으시다면, [References](#references) 섹션에 기재된 논문을 참조해주세요. 
 TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validation dataset은 대회 참가에 제공된 Dataset을 이용했습니다. 
 
 자세한 Inference 방법은 다음과 같이 실행해주세요.
@@ -89,9 +89,8 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
    ```
 
 1. Inference를 위해서는 몇가지 argument들을 설정 및 지정해주셔야 합니다. 
-총 4개의 `--data_root`, `--exp`, --json`, `--plot_png` argument들을 지정해줄 수 있습니다.
-   - ```--data_root```: inference를 위한 data 디렉토리 경로 argument
-   \[default: ./data\]
+총 4개의 ```--data_root```, ```--exp```, ```--json```, ```--plot_png``` argument들을 지정해줄 수 있습니다.
+   - ```--data_root```: inference를 위한 data 디렉토리 경로 (default: **./data**)
 
       폴더 구조 예시)
       ```
@@ -102,19 +101,19 @@ TaiLab_Net은 inference만 시연 가능하게 만들어졌고, Train과 Validat
       │    │   ...    
       │    │     
       └─── A4C
-         │   0801.png (번호 확인)
-         │   0801.npy
-         │   ...
+           │   0801.png (번호 확인)
+           │   0801.npy
+           │   ...
       ```
    
-   - ```--exp```: .npy파일 저장되는 output directory 
-   default: ./exp
+   - ```--exp```: .npy파일이 저장되는 output 디렉토리 경로 
+   (default: **./exp**)
 
-   - json: 결과 document 저장 (boolean)
-   default: false
-   default directory: ./exp/result_A2C.json / A4C도 동일
+   - ```--json```: 결과 document 저장 여부 (boolean)
+   (default: false)
+   (default directory: ./exp/result_A2C.json **OR** ./exp/result_A4C.json)
 
-   -plot_png: 생성된 mask를 저장 여부 (boolean)
+   - ```--plot_png```: 생성된 mask를 저장 여부 (boolean)
    deafult: false 
    default: ./exp 랑 같은 directory에 저장
 
